@@ -289,5 +289,5 @@ Object.setPrototypeOf(rabbit1, animal);
     setTimeout( () => noSuchVariable, 1000); //undefined
     //if the try cannot be exectued then execute catch block (intended usage)
   } catch (err) {
-    console.log(`${err} - There is no first name!`)
+    // console.log(`${err} - There is no first name!`)
   }

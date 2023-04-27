@@ -256,7 +256,6 @@ console.log('step 2', ourStack)*/
 
 // console.log(parse);
 
-
 /////////////////////////// w3schools.com array sort example: sort cars ==>>translated to JS
 // const cars = [
 //     {type: "volvo", year: 2016},
@@ -310,10 +309,9 @@ console.log('step 2', ourStack)*/
 // const over18 = numbers3.filter(myFunction);
 // const under18 = numbers3.filter(myFunction2);
 
-
 ///////////////////ASK ABOUT HOW TO IF ELSE this EXample from w3schools
 // function myFunction(value, index, array) {
-//   let value = 
+//   let value =
 //     if value { x > 18},
 //   else {
 //     return value > 18
@@ -323,7 +321,6 @@ console.log('step 2', ourStack)*/
 // }
 // console.log(under18)
 
-
 /////////////////////// EX: reduce()
 const numbers = [45, 4, 9, 16, 25];
 let sum = numbers.reduce(myFunction);
@@ -331,4 +328,4 @@ let sum = numbers.reduce(myFunction);
 function myFunction(total, value, index, array) {
   return total + value;
 }
-console.log(sum)
+console.log(sum);
