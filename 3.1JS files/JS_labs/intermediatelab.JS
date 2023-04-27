@@ -144,8 +144,13 @@ function camelCase(cssProp) {
     let chars = input.split('');
     results.push(char)
   }
-
 }
+// loop over string                   ///pseudo code to help guide your mindset
+// if char in string = '-' 
+// replace hyphen 
+// remember the next char 
+// .uppercase the next charecter
+// combine everything and return 
 
 // QUESTION 5
 //Decimal number operations in JavaScript can lead to unexpected results, as in the following:
@@ -163,7 +168,6 @@ let fixedTen = tenCents.toFixed(2);
 // console.log(fixedTwenty + fixedTen) //why is this not working?
 
 /* a) Explain why the above code returns the wrong answer  // answer: hasn't been converted
-
 b) Create a function currencyAddition(float1, float2) which safely adds the two decimal 
 numbers float1 and float2 and returns the correct float result. */
 let float1 = twentyCents
@@ -175,7 +179,7 @@ function currencyAddition(float1, float2) {
   return sum.toFixed(2); //sum of float1 +float2 marked down to 2 decimal places for a "total"
 }
 
-// console.log('$', currencyAddition(twentyCents, tenCents))       //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
+console.log('$', currencyAddition(twentyCents, tenCents))       //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
 
 /* c) Create a function currencyOperation(float1, float2, operation) which safely performs the 
 given operation (either +, -, / or *) on the two numbers and returns the correct float result. 
@@ -187,7 +191,7 @@ function currencyOperation(float1, float2, operation) {
 
 /* d) (Extension) Extend the above function to include a fourth argument numDecimals which allows the 
 operation to support different amounts of decimal places from 1 to 10.*/
-
+// adjust the tofixed paramater on line 166 and 167
 
 /* 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. 
 Your function should return an array containing only the unique values from duplicatesArray.
@@ -200,3 +204,25 @@ function unique() {}
 
 console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ] 
 console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+
+let counted = {   //trying steps
+  'red' : 0,
+  'green': 0,
+}
+
+const uniqueArray = []   //his example
+
+//what data type only accepted unique values???
+// "The set"
+// https://jscurious.com/javascript-set-object-to-store-unique-values/#:~:text=The%20Set%20in%20JavaScript%20is,when%20compared%20to%20the%20Array.
+
+// pseudo code
+// function unique takes in param colors
+// iterate over array
+// count each item and add count object
+//iterate over input array and check count
+// if count > 1
+// then skip
+// else push item to uniqueArray
+// return uniqueArray
+
