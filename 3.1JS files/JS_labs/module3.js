@@ -18,7 +18,7 @@
 
 // console.log(" \t \n" - 2)
 
-/* */6.
+/* 6.
     const westley = {
     name: "Westley",
     numFingers: 5,
@@ -38,7 +38,7 @@
         console.log(greeting + this.getCatchPhrase(person));
     },
     getCatchPhrase(person) {
-        if (person.name === "Westly") {
+        if (person.numFingers === "Westly") {
         return "You killed my father, Prepare to DIE!!";
         } else {
         return "HELLO WORLd";
@@ -49,8 +49,8 @@
 
 
 inigo.greeting(inigo);
-/**/
-/*
+*/
+
 // 7.
 const basketballGame = {
   score: 0,
@@ -88,7 +88,7 @@ const basketballGame = {
 };
 //modify each of the above object methods to enable function chaining as below
 basketballGame.basket(0).freeThrow().increaseFouls().halfTime();
-*/ /// end of question 7
+ /// end of question 7
 
 /* 8.
 ///older style that we've been practicing with

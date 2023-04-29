@@ -95,15 +95,16 @@ let resultP4 = addition + conditionOperator;
 function getGreeting(name) {
   return "Hello " + name + "!";
 }
-const getGreeting2 = function(name) {         // Expression syntax    
-    return "Hello " + name + "!";
-}
-const getGreeting3 = (name) => {                // Arrow syntax
-    return "Hello " + name + "!";
-}
+const getGreeting2 = function (name) {
+  // Expression syntax
+  return "Hello " + name + "!";
+};
+const getGreeting3 = (name) => {
+  // Arrow syntax
+  return "Hello " + name + "!";
+};
 
-// console.log(getGreeting1('bob'))               //change which function you're calling and it will run function in different syntax 
-
+// console.log(getGreeting1('bob'))               //change which function you're calling and it will run function in different syntax
 
 //////////////////// Problem 6 ///////////////////////
 // 6. Several requirements:
@@ -122,17 +123,28 @@ const rugen = {
 };
 
 const inigo = {
+  //// this is an object so it requires key value pairs aka (property: value)
   firstName: "Inigo",
   lastName: "Montoya", //Added lastName property here to define it for use (step a)
+  //   getCatchPhrase: () => {//insert if else here},     //this is arrow function inserted inside an OBJECT syntax
   greeting(person) {
     let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `; //Added lastName here to include in response (step a)
     console.log(greeting + this.getCatchPhrase(person));
   },
   getCatchPhrase(person) {
+    //regular syntax
     if (person.numFingers === 6) {
-      return "You killed my father, Prepare to Die!!";
+      return "You killed my father, Prepare to DIE!!";
     } else {
-        return this.getCatchPhrase
+      return `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
+    }
+  },
+  getCatchPhrase: (person) => {
+    //arrow function syntax
+    if (person.numFingers === 6) {
+      return "You killed my father, Prepare to DIE!!";
+    } else {
+      return `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
     }
   },
 };
@@ -140,4 +152,56 @@ const inigo = {
 // inigo.greeting(westley);
 // inigo.greeting(rugen);
 
-inigo.greeting(westley)
+//////////////////// Problem 7 ///////////////////////  - Go back and find video going through this
+// 7. The following object represents a basketball game and keeps track of the score as the game progresses.
+// a) Modify each of the methods so that they can be 'chained' together
+// and the last line of the example code works.
+// b) add a new method to print the full time final score
+// c) Add a new object property to keep track of the number of fouls and a method to increment
+// it, similar but separate to the score. Include the foul count in the 1/2 time and full
+// time console messages
+// d) Test your object by chaining all the method calls together in different combinations
+
+const basketballGame = {
+  score: 0,
+  fouls: 0, //added per requirements
+
+  freeThrow() {
+    this.score++;
+    return this; // added to create an output on terminal
+  },
+  basket() {
+    this.score += 2;
+    return this; // added to create an output on terminal
+  },
+  threePointer() {
+    this.score += 3;
+    return this; // added to create an output on terminal
+  },
+  penalty() {
+    this.score -= 2;
+    return this; // added to create an output on terminal
+  },
+  halfTime() {
+    console.log("Halftime score is " + this.score);
+    return this; // added to create an output on terminal
+  },
+  increaseFouls(param = 0, second_param = 0) {
+    console.log("First 1/2:", param, "Second 1/2:", second_param);
+    this.fouls = param + this.fouls;
+    return this;
+  },
+  fullTime() {
+    console.log("Fulltime score is " + this.score, "\n" + "fouls" + this.fouls);
+    return this;
+  },
+};
+//modify each of the above object methods to enable function chaining as below
+basketballGame.basket(2).freeThrow(1).increaseFouls(5).halfTime();
+
+//////////////////// Problem 8 ///////////////////////
+// 8. The object below represents a single city
+// a) Write a function that takes an object as an argument and uses a for...in loop to 
+// to access and print to the console each of those object properties and their CSSFontFeatureValuesRule. Test it using the sydney object below.CSSFontFeatureValuesRule
+// b) Create a new object for a different city with different properties and call your function
+// again with the new object.

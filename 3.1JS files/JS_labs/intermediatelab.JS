@@ -139,78 +139,147 @@ b) Create variants of the camelCase function that use different types of for loo
 c) with and without the conditional operator.*/
 
 function camelCase(cssProp) {
-  let results = []
-  for (let index=0; index < Input.length; index++) {
-    let chars = input.split('');
-    results.push(char)
+  let results = [];
+  for (let index = 0; index < Input.length; index++) {
+    let chars = input.split("");
+    results.push(char);
   }
 }
 // loop over string                   ///pseudo code to help guide your mindset
-// if char in string = '-' 
-// replace hyphen 
-// remember the next char 
+// if char in string = '-'
+// replace hyphen
+// remember the next char
 // .uppercase the next charecter
-// combine everything and return 
+// combine everything and return
 
 // QUESTION 5
 //Decimal number operations in JavaScript can lead to unexpected results, as in the following:
 
-let twentyCents = 0.20 
-let tenCents = 0.10 
-// console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`) 
-// 0.2 + 0.1 = 0.30000000000000004 
+let twentyCents = 0.2;
+let tenCents = 0.1;
+// console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`)
+// 0.2 + 0.1 = 0.30000000000000004
 
 /* We can sometimes avoid this using the toFixed function to force the number of decimal places as below, but 
 it’s not always useful: */
 
-let fixedTwenty = twentyCents.toFixed(2); 
-let fixedTen = tenCents.toFixed(2); 
+let fixedTwenty = twentyCents.toFixed(2);
+let fixedTen = tenCents.toFixed(2);
 // console.log(fixedTwenty + fixedTen) //why is this not working?
 
 /* a) Explain why the above code returns the wrong answer  // answer: hasn't been converted
 b) Create a function currencyAddition(float1, float2) which safely adds the two decimal 
 numbers float1 and float2 and returns the correct float result. */
-let float1 = twentyCents
-let float2 = tenCents
-
+let float1 = twentyCents;
+let float2 = tenCents;
+// console.log(fixedTwenty)
 function currencyAddition(float1, float2) {
-  sum = float1 + float2
+  sum = float1 + float2;
 
   return sum.toFixed(2); //sum of float1 +float2 marked down to 2 decimal places for a "total"
 }
 
-console.log('$', currencyAddition(twentyCents, tenCents))       //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
+console.log("$", currencyAddition(0.3, 0.8)); //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
 
 /* c) Create a function currencyOperation(float1, float2, operation) which safely performs the 
 given operation (either +, -, / or *) on the two numbers and returns the correct float result. 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch may be useful. */
 
 function currencyOperation(float1, float2, operation) {
-}
+  let result = 0;
+  switch (operation) {
+    case "+":
+      console.log(`${float1} + ${float2}`);
+      result = float1 + float2   /// changed from return because of line 189 added " let result = 0"
+      break;
+    case "-":
+      console.log(`${float1} - ${float2}`);
+      result = float1 - float2
+      break;
+    case "/":
+      console.log(`${float1} / ${float2}`);
+      result = float1 / float2
+      break;
+    case "*":
+      console.log(`${float1} * ${float2}`);
+      result = float1 * float2
+      break;
 
+    default:
+      break;
+
+  } 
+  return result
+}
+console.log(currencyOperation(.50, .6, '+'))
 
 /* d) (Extension) Extend the above function to include a fourth argument numDecimals which allows the 
 operation to support different amounts of decimal places from 1 to 10.*/
+
+function currencyOperation2(float1, float2, operation, numDecimals) {
+  let result = 0;
+  switch (operation) {
+    case "+":
+      console.log(`${float1} + ${float2}`);
+      result = float1 + float2   /// changed from return because of line 189 added " let result = 0"
+      break;
+    case "-":
+      console.log(`${float1} - ${float2}`);
+      result = float1 - float2
+      break;
+    case "/":
+      console.log(`${float1} / ${float2}`);
+      result = float1 / float2
+      break;
+    case "*":
+      console.log(`${float1} * ${float2}`);
+      result = float1 * float2
+      break;
+
+    default:
+      break;
+
+  } 
+  return result.toFixed(numDecimals)
+}
+console.log(currencyOperation2(.50, .6, '+', 56))
+console.log(currencyOperation2(4, .6, '*', 2))
+
+console.log(0.3 === currencyAddition(0.1, 0.2))  // true (if you use == instead of ===)
+console.log(0.3 === currencyOperation2(0.1, 0.2, '+', 2))  // true (if you use == instead of ===)
+
+
+
 // adjust the tofixed paramater on line 166 and 167
 
 /* 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. 
 Your function should return an array containing only the unique values from duplicatesArray.
 Test with the following arrays and create another one of your own. */
 
-const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow'] 
-const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43] 
+const colours = [
+  "red",
+  "green",
+  "blue",
+  "yellow",
+  "orange",
+  "red",
+  "blue",
+  "yellow",
+];
+const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43];
 
 function unique() {}
 
-console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ] 
-console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+// console.log(unique(colours)); // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+// console.log(unique(testScores)); // [ 55, 84, 97, 63, 32, 91, 43 ]
 
-let counted = {   //trying steps
-  'red' : 0,
-  'green': 0,
-}
+let counted = {
+  //trying steps
+  red: 0,
+  green: 0,
+};
 
-const uniqueArray = []   //his example
+const uniqueArray = []; //his example
 
 //what data type only accepted unique values???
 // "The set"
@@ -225,4 +294,3 @@ const uniqueArray = []   //his example
 // then skip
 // else push item to uniqueArray
 // return uniqueArray
-
