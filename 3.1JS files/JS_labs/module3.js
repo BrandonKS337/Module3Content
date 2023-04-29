@@ -18,7 +18,7 @@
 
 // console.log(" \t \n" - 2)
 
-/* 6.
+/* */6.
     const westley = {
     name: "Westley",
     numFingers: 5,
