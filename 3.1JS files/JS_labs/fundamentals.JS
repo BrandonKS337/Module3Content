@@ -202,18 +202,76 @@ const basketballGame = {
 //////////////////// Problem 8 ///////////////////////
 // 8. The object below represents a single city
 // a) Write a function that takes an object as an argument and uses a for...in loop to 
-// access and print to the console each of those object properties and their CSSFontFeatureValuesRule. 
-// Test it using the sydney object below.CSSFontFeatureValuesRule
+// access and print to the console each of those object properties and their Values. 
+// Test it using the sydney object below.
 // b) Create a new object for a different city with different properties and call your function
 // again with the new object.
 
 const sydney = {
-    name: 'Sydney',
-    population: 5_121_000,
-    state: 'NSW',
-    founded: '26 January 1788',
-    timezone: 'Australia/Sydney'
+    Name: 'Sydney',
+    Population: 5_121_000,
+    State: 'NSW',
+    Founded: '26 January 1788',
+    TimeZone: 'Australia/Sydney'
+};
+const lafayette = {
+    Name: 'Lafayette',
+    Population: 4_624_000,
+    State: 'Louisiana',
+    Founded: '30 April, 1812',
+    TimeZone: 'Central Daylight Time',
+    Best_Food_Chain: "Raising Canes"
 }
+const printProps = (paramater) => {
+    for(let key in paramater) {
+        console.log(key, ':', paramater[key])
+    }
+    
+}
+// console.log(printProps(sydney))    /// this will return an undefined because I do not have a return set up inside the function itself.
+// printProps(sydney)
+// printProps(lafayette)
 
-console.log(sydney)
+//////////////////// Problem 9 ///////////////////////
+// 9. Use the following variables to understand how JavaScript stores objects by reference.
+// a) Create a new moreSports variable equal to teamSports and add some new sport
+// values to it (using push and unshift)
+// b) Create a new dog2 variable equal to dog1 and give it a new value
+// c) Create a new cat2 variable equal to cat1 and change its name property
+// d) Print the original teamSports, dog1 and cat1 variables to the console. Have they
+// changed? Why?
+// e) Change the way the moreSports and cat2 variables are created to ensure the
+// originals remain independent
+
+let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
+let moreSports = [...teamSports]    //Deep clone syntax for arrays is newVar=[arr]
+let dog1 = 'Bingo';
+let newDoggo = dog1  //newDoggo = dog2 just changing it for person flavor
+let cat1 = {name: 'Fluffy', breed: 'Siberian'}
+let newGatto = {...cat1}  //Deep clone syntax variable = {...newProperty}
+
+// pushing / unshifting variables
+moreSports.push('baseball')
+moreSports.unshift('soccer')
+
+// changing pet names from inherited property names of 'bingo' and 'fluffy
+newDoggo = 'barf'
+newGatto.name = 'not fluffy'     // changes inherited name while keeping other key values same
+// console.log(newGatto)
+
+
+// printProps(teamSports) // step d says print so using an existing function to "print" just in case
+// printProps(dog1)
+// printProps(cat1)
+
+console.log(teamSports, dog1, cat1)  // How I think they meant to do this step d request
+// d) answer: no, comes back with new variable because I set = to instead of cloning them
+// e) reroute initial variables for the moreSports and newGatto to deep clone vs pull array 
+
+
+
+
+
+
+
 

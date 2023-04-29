@@ -296,3 +296,5 @@ const uniqueArray = []; //his example
 //take array
 //create new set
 //call new data log
+
+
