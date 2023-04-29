@@ -1,47 +1,47 @@
 // 1. What are the results of these xpressions? (answer first, then use console.log() to check)
 
-// "" + 1 + 0               // 10
+"" + 1 + 0               // 10
 // // console.log("" + 1 + 0)
-// "" - 1 + 0              // -1
+"" - 1 + 0              // -1
 // // console.log("" - 1 + 0)
-// true + false
+true + false
 // // console.log(true + false)        // 1 true = 1, false = 0 in binary so 1+0 = 1
-// !true
+!true
 // // console.log(!true)                  //false .... ! =not; therefore: !true = not true aka false
-// 6 / "3"
+6 / "3"
 // // console.log(6 / "3")                // 2.....the division sign here converts 3 from a string to a #
-// "2" * "3"
+"2" * "3"
 // // console.log("2" * "3")               // 6 ....same thing as line 10. multiplier symbol takes both strings and converts them to numbers
-// 4 + 5 + "px"
+4 + 5 + "px"
 // // console.log(4 + 5 + "px")               // 9px ....this one starts as numbers but will add in px due to px not being # or will come back bad
-// "$" + 4 + 5
+"$" + 4 + 5
 // // console.log("$" + 4 + 5)                    // $45 ....starts as a string object so will concatenate the three elements inside the object
-// "4" - 2
+"4" - 2
 // // console.log("4" - 2)                     // 2 ... starts as string but will remove 2 from value 4 because why not
-// "4px" - 2
+"4px" - 2
 // // console.log("4px" - 2)                        //NaN (Not a Number) ... because it is trying to take "2" from 4px but due to numbers and letters it cannot causing an error in the math.
-// "-9" + 5
+"-9" + 5
 // // console.log(" -9 " + 5)                            // -9 5 .......because string object concatenating to elements -9 and +5
-// " -9 " - 5
+" -9 " - 5
 // // console.log(" -9 " - 5)                             // -14 ......because - symbol turns this into number object
-// null + 1
+null + 1
 // // console.log(null + 1)                            //1..... null = 0 therefore 0+1 = 1
-// undefined + 1
+undefined + 1
 // // console.log(undefined + 1)                          // NaN .... possibly because of undefined being combined with a value? basically an undefined object being concatenated with a number object making the whole object a number object.
-// undefined == null
+undefined == null
 // // console.log(undefined == null)                   // true ........because loosely they are both same object type
-// undefined === null
+undefined === null
 // // console.log(undefined === null)                 // false .........do not represent the EXACT same thing so will return false
-// " \t \n" - 2
+" \t \n" - 2
 // // console.log(" \t \n" - 2)                       // -2 .......... \t = tab \n = new line;    HOWEVER in this case both of those are inside parenthesis while (- 2) is outside of that meaning that the tab and new line do not apply and -2 is final variable with an actual value
 
 //////////////////// Problem 2 ///////////////////////
 // 2. Which of the bleow are not giving the right answer? Why are they not correct? How can we fix them?
 // answer: switch the "string" objects that are #'s 3 4 & 30 to number objects by deleting the parenthesis in the first three parts
 
-// let three = 3    // removed the parenthesis from these 3 to make operation statements below function properly
-// let four = 4
-// let thirty = 30
+let three = 3    // removed the parenthesis from these 3 to make operation statements below function properly
+let four = 4
+let thirty = 30
 
 // what is the value of the following expressions?
 // let addition = three + four                   /// incorrect answer when console logged.. shows "34"
@@ -201,33 +201,32 @@ const basketballGame = {
 
 //////////////////// Problem 8 ///////////////////////
 // 8. The object below represents a single city
-// a) Write a function that takes an object as an argument and uses a for...in loop to 
-// access and print to the console each of those object properties and their Values. 
+// a) Write a function that takes an object as an argument and uses a for...in loop to
+// access and print to the console each of those object properties and their Values.
 // Test it using the sydney object below.
 // b) Create a new object for a different city with different properties and call your function
 // again with the new object.
 
 const sydney = {
-    Name: 'Sydney',
-    Population: 5_121_000,
-    State: 'NSW',
-    Founded: '26 January 1788',
-    TimeZone: 'Australia/Sydney'
+  Name: "Sydney",
+  Population: 5_121_000,
+  State: "NSW",
+  Founded: "26 January 1788",
+  TimeZone: "Australia/Sydney",
 };
 const lafayette = {
-    Name: 'Lafayette',
-    Population: 4_624_000,
-    State: 'Louisiana',
-    Founded: '30 April, 1812',
-    TimeZone: 'Central Daylight Time',
-    Best_Food_Chain: "Raising Canes"
-}
+  Name: "Lafayette",
+  Population: 4_624_000,
+  State: "Louisiana",
+  Founded: "30 April, 1812",
+  TimeZone: "Central Daylight Time",
+  Best_Food_Chain: "Raising Canes",
+};
 const printProps = (paramater) => {
-    for(let key in paramater) {
-        console.log(key, ':', paramater[key])
-    }
-    
-}
+  for (let key in paramater) {
+    console.log(key, ":", paramater[key]);
+  }
+};
 // console.log(printProps(sydney))    /// this will return an undefined because I do not have a return set up inside the function itself.
 // printProps(sydney)
 // printProps(lafayette)
@@ -243,35 +242,61 @@ const printProps = (paramater) => {
 // e) Change the way the moreSports and cat2 variables are created to ensure the
 // originals remain independent
 
-let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
-let moreSports = [...teamSports]    //Deep clone syntax for arrays is newVar=[arr]
-let dog1 = 'Bingo';
-let newDoggo = dog1  //newDoggo = dog2 just changing it for person flavor
-let cat1 = {name: 'Fluffy', breed: 'Siberian'}
-let newGatto = {...cat1}  //Deep clone syntax variable = {...newProperty}
+let teamSports = ["Hockey", "Cricket", "Volleyball"];
+let moreSports = [...teamSports]; //Deep clone syntax for arrays is newVar=[arr]
+let dog1 = "Bingo";
+let newDoggo = dog1; //newDoggo = dog2 just changing it for person flavor
+let cat1 = { name: "Fluffy", breed: "Siberian" };
+let newGatto = { ...cat1 }; //Deep clone syntax variable = {...newProperty}
 
 // pushing / unshifting variables
-moreSports.push('baseball')
-moreSports.unshift('soccer')
+moreSports.push("baseball");
+moreSports.unshift("soccer");
 
 // changing pet names from inherited property names of 'bingo' and 'fluffy
-newDoggo = 'barf'
-newGatto.name = 'not fluffy'     // changes inherited name while keeping other key values same
+newDoggo = "barf";
+newGatto.name = "not fluffy"; // changes inherited name while keeping other key values same
 // console.log(newGatto)
-
 
 // printProps(teamSports) // step d says print so using an existing function to "print" just in case
 // printProps(dog1)
 // printProps(cat1)
 
-console.log(teamSports, dog1, cat1)  // How I think they meant to do this step d request
+// console.log(teamSports, dog1, cat1); // How I think they meant to do this step d request
 // d) answer: no, comes back with new variable because I set = to instead of cloning them
-// e) reroute initial variables for the moreSports and newGatto to deep clone vs pull array 
+// e) reroute initial variables for the moreSports and newGatto to deep clone vs pull array
 
 
+// //////////////////// Problem 10 ///////////////////////
+// // 10. The following constructor function creates a new Person object with the given name and
+// age values.
+// a) Create a new person using the constructor function and store it in a variable
+// b) Create a second person using different name and age values and store it in a separate
+// variable
+// c) Print out the properties of each person object to the console
+// d) Rewrite the constructor function as a class called PersonClass and use it to create a
+// third person using different name and age values. Print it to the console as well.
+// e) Add a canDrive method to both the constructor function and the class that returns true
+// if the person is old enough to drive.
 
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.human = true;
+}
+// create person2 constructor function ==> store in variable
+class Person2 {
+    constructor (name, age) {
+        this.name = name;
+        this.age = age;
+        this.human = true;
+        
+    }
+}
 
+// create person3 constructor functiopn ==> store in variable
 
-
-
+// printProps(Person)
+// printProps(Person2)
+// printProps(Person3)
 
