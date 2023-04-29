@@ -190,28 +190,27 @@ function currencyOperation(float1, float2, operation) {
   switch (operation) {
     case "+":
       console.log(`${float1} + ${float2}`);
-      result = float1 + float2   /// changed from return because of line 189 added " let result = 0"
+      result = float1 + float2; /// changed from return because of line 189 added " let result = 0"
       break;
     case "-":
       console.log(`${float1} - ${float2}`);
-      result = float1 - float2
+      result = float1 - float2;
       break;
     case "/":
       console.log(`${float1} / ${float2}`);
-      result = float1 / float2
+      result = float1 / float2;
       break;
     case "*":
       console.log(`${float1} * ${float2}`);
-      result = float1 * float2
+      result = float1 * float2;
       break;
 
     default:
       break;
-
-  } 
-  return result
+  }
+  return result;
 }
-console.log(currencyOperation(.50, .6, '+'))
+console.log(currencyOperation(0.5, 0.6, "+"));
 
 /* d) (Extension) Extend the above function to include a fourth argument numDecimals which allows the 
 operation to support different amounts of decimal places from 1 to 10.*/
@@ -221,40 +220,39 @@ function currencyOperation2(float1, float2, operation, numDecimals) {
   switch (operation) {
     case "+":
       console.log(`${float1} + ${float2}`);
-      result = float1 + float2   /// changed from return because of line 189 added " let result = 0"
+      result = float1 + float2; /// changed from return because of line 189 added " let result = 0"
       break;
     case "-":
       console.log(`${float1} - ${float2}`);
-      result = float1 - float2
+      result = float1 - float2;
       break;
     case "/":
       console.log(`${float1} / ${float2}`);
-      result = float1 / float2
+      result = float1 / float2;
       break;
     case "*":
       console.log(`${float1} * ${float2}`);
-      result = float1 * float2
+      result = float1 * float2;
       break;
 
     default:
       break;
-
-  } 
-  return result.toFixed(numDecimals)
+  }
+  return result.toFixed(numDecimals);
 }
-console.log(currencyOperation2(.50, .6, '+', 56))
-console.log(currencyOperation2(4, .6, '*', 2))
+console.log(currencyOperation2(0.5, 0.6, "+", 56));
+console.log(currencyOperation2(4, 0.6, "*", 2));
 
-console.log(0.3 === currencyAddition(0.1, 0.2))  // true (if you use == instead of ===)
-console.log(0.3 === currencyOperation2(0.1, 0.2, '+', 2))  // true (if you use == instead of ===)
-
-
+console.log(0.3 === currencyAddition(0.1, 0.2)); // true (if you use == instead of ===)
+console.log(0.3 === currencyOperation2(0.1, 0.2, "+", 2)); // true (if you use == instead of ===)
 
 // adjust the tofixed paramater on line 166 and 167
 
 /* 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. 
 Your function should return an array containing only the unique values from duplicatesArray.
 Test with the following arrays and create another one of your own. */
+
+/// slides 49-51 /// new array Set
 
 const colours = [
   "red",
@@ -294,3 +292,7 @@ const uniqueArray = []; //his example
 // then skip
 // else push item to uniqueArray
 // return uniqueArray
+
+//take array
+//create new set
+//call new data log
