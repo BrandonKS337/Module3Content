@@ -95,14 +95,19 @@ function replaceMiddleAnimal(newAnimal) {
 }
 
 // d)
-replaceMiddleAnimal('cat');                
+replaceMiddleAnimal('Seal');                
 // console.log(animalsSorted)
 
 // e) Write a function findMatchingAnimals(beginsWith) that returns a new array containing all the 
 // animals that begin with the beginsWith string.Try to make it work regardless of upper/lower case.
 
 
-
+function findAnimal(beginsWith) {
+  let fLetter = animalsSorted.filter(item => beginsWith.toLowerCase() === item[0].toLowerCase())
+  // by adding .toLowerCase to both beginsWith and item[] it will allow for searching for capital or lower case
+  return fLetter    
+}
+console.log(findAnimal('c'))
 
 
 
