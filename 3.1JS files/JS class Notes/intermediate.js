@@ -329,3 +329,20 @@ function myFunction(total, value, index, array) {
   return total + value;
 }
 console.log(sum);
+
+//////////////////////////// Array sorting and inserting //////////////////////////
+// Stephen's answer for problem 3 intermediate
+
+const animals = ["Tiger", "Giraffe",];     //original syntax
+
+animals.push("Rabbit", "Cat");             // adds to at end
+animals.unshift("Donkey", "Monkey");        //adds to at start
+
+const animalsSorted = animals.sort()        //sorts and returns as new object
+
+function replaceMiddleAnimal(newAnimals) {  //replaces "middle" item
+    let index = animalsSorted.length /2
+    animalsSorted[index] = newAnimals
+}
+
+console.log(replaceMiddleAnimal('bear'))      //console.log to insert new item value
