@@ -30,7 +30,7 @@ let result = toTitleCase("i beLIeve in ALieNs");
 // https://www.w3schools.com/jsref/jsref_touppercase.asp
 
 ///////////////////////////////////////////////////////// Question 1 Answered ////////////////////////////////////////////////////////////////////////////////
-
+//////////////////////// Question 2 ////////////////////////////////
 /*2. Create a function truncate(str, max) that truncates a given string of text if its total length is greater than the max length.
 It should return either the truncated text, with an ellipsis (…) added to the end if it was too long,
 or the original text otherwise.
@@ -56,15 +56,16 @@ truncatedSentence = function (str, length, ending) {
 // source: https://www.w3resource.com/javascript-exercises/javascript-string-exercise-16.php
 
 /////////////////////////////////////////////////////////// Question 2 Answered //////////////////////////////////////////////////////////////////////////////
-
+//////////////////////// Question 3 ////////////////////////////////
 /*3. Use the following animals array for the below tasks. Test each one by printing the result to the console.
 Review the following link for tips: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 a) Add 2 new values to the end
 b) Add 2 new values to the beginning
 c) Sort the values alphabetically
-d) Write a function replaceMiddleAnimal(newValue) that replaces the value in the middle of the animals array with newValue
-e) Write a function findMatchingAnimals(beginsWith) that returns a new array containing all the animals that begin with the beginsWith string.
-  Try to make it work regardless of upper/lower case.*/
+d) Write a function replaceMiddleAnimal(newValue) that replaces the value in the middle of the 
+animals array with newValue
+e) Write a function findMatchingAnimals(beginsWith) that returns a new array containing all the 
+animals that begin with the beginsWith string.Try to make it work regardless of upper/lower case.*/
 
 const animals = ["Tiger", "Giraffe"];
 
@@ -101,8 +102,10 @@ function replaceMiddleAnimal(newValue) {
 // replacing middle of array source:
 // https://stackoverflow.com/questions/74049829/function-that-inserts-a-new-value-in-the-middle-of-an-array
 
-/////////////////////////////////////////////////////////// Question 3 NOT-Answered //////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////// Question 3 //////////////////////////////////////////////////////////////////////////////
 
+
+//////////////////////// Question 4 ( not actually question 4) ////////////////////////////////
 /*4. Rewrite this if using the ternary/conditional operator '?'. Test it with different values for a
 and b. What does the ‘+=’ do?
 
@@ -132,6 +135,8 @@ source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operat
 
 /////////////////////////////////////////////////////////// Question 4 Answered ///////////////////////////////////////////////////////////
 
+
+//////////////////////// Question 4 ////////////////////////////////
 /*ACTUALLY QUESTION 4
 Write a function camelCase(cssProp) that changes dash-separated CSS properties like 'margin-left' into camel-cased 'marginLeft'. 
 The function should remove all dashes, and uppercase the first letter of each word after a dash. 
@@ -152,6 +157,8 @@ function camelCase(cssProp) {
 // .uppercase the next charecter
 // combine everything and return
 
+
+//////////////////////// Question 5 ////////////////////////////////
 // QUESTION 5
 //Decimal number operations in JavaScript can lead to unexpected results, as in the following:
 
@@ -179,7 +186,7 @@ function currencyAddition(float1, float2) {
   return sum.toFixed(2); //sum of float1 +float2 marked down to 2 decimal places for a "total"
 }
 
-console.log("$", currencyAddition(0.3, 0.8)); //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
+// console.log("$", currencyAddition(0.3, 0.8)); //inputing the parameteres twentyCents and tenCents ties in the costs of variables listed above
 
 /* c) Create a function currencyOperation(float1, float2, operation) which safely performs the 
 given operation (either +, -, / or *) on the two numbers and returns the correct float result. 
@@ -210,7 +217,7 @@ function currencyOperation(float1, float2, operation) {
   }
   return result;
 }
-console.log(currencyOperation(0.5, 0.6, "+"));
+// console.log(currencyOperation(0.5, 0.6, "+"));
 
 /* d) (Extension) Extend the above function to include a fourth argument numDecimals which allows the 
 operation to support different amounts of decimal places from 1 to 10.*/
@@ -240,14 +247,15 @@ function currencyOperation2(float1, float2, operation, numDecimals) {
   }
   return result.toFixed(numDecimals);
 }
-console.log(currencyOperation2(0.5, 0.6, "+", 56));
-console.log(currencyOperation2(4, 0.6, "*", 2));
+// console.log(currencyOperation2(0.5, 0.6, "+", 56));
+// console.log(currencyOperation2(4, 0.6, "*", 2));
 
-console.log(0.3 === currencyAddition(0.1, 0.2)); // true (if you use == instead of ===)
-console.log(0.3 === currencyOperation2(0.1, 0.2, "+", 2)); // true (if you use == instead of ===)
+// console.log(0.3 === currencyAddition(0.1, 0.2)); // true (if you use == instead of ===)
+// console.log(0.3 === currencyOperation2(0.1, 0.2, "+", 2)); // true (if you use == instead of ===)
 
 // adjust the tofixed paramater on line 166 and 167
 
+//////////////////////// Question 6 ////////////////////////////////
 /* 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. 
 Your function should return an array containing only the unique values from duplicatesArray.
 Test with the following arrays and create another one of your own. */
