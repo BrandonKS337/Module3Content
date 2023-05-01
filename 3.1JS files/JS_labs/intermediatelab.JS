@@ -454,9 +454,12 @@ const today = new Date();
 
 function amIOld() {
   // let howOld = today.getFullYear()-1989                  // this part messes up the order and ruins code, ask how else to do this
-  let years = new Date(1989);
-  let months = years * 12;
-  let days = years * 365;
+  let dateString = '1989-05-24'
+  let bDay = new Date(dateString);
+  let years = today.getFullYear()-bDay.getFullYear()
+  let months = today.getMonth()-bDay.getMonth();
+
+  let days = today.getDate()-bDay.getDate();
   let x = years;
   let y = months;
   let z = days;
@@ -464,38 +467,27 @@ function amIOld() {
 }
 // amIOld()
 
-function calculateExp(birthDate) {
-  birthDate = new Date(birthDate);
-  let now = new Date();
-  otherDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  let years = otherDate.getFullYear() - birthDate.getFullYear();
 
-  if (
-    otherDate.getMonth() < birthDate.getMonth() ||
-    (otherDate.getMonth() == birthDate.getMonth() &&
-      otherDate.getDate() < birthDate.getDate())
-  ) {
-    years--;
-  }
-
-  return years;
-}
-console.log(calculateExp(1989, 12));
 // d) Write a function daysInBetween(date1, date2) which calculates and returns the amount
 // of days in between the two given dates.
 
-function daysInBetween(date1, date2){
-// let date1 = new Date("06/30/2019");
-// let date2 = new Date("07/30/2019");
+function daysInBetween(date1, date2) {
+  // let date1 = new Date("06/30/2019");
+  // let date2 = new Date("07/30/2019");
 
-let Difference_In_Time = date2.getTime() - date1.getTime();
+  let Difference_In_Time = date2.getTime() - date1.getTime();
 
-let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
-//To display the final no. of days (result)
-console.log(
-  "Total number of days between dates  \n" + date1 + "<br> and <br>" + date2 + " is: \n " + Difference_In_Days
-);
+  //To display the final no. of days (result)
+  console.log(
+    "Total number of days between dates  \n" +
+      date1 +
+      "<br> and <br>" +
+      date2 +
+      " is: \n " +
+      Difference_In_Days
+  );
 }
 
-console.log(daysInBetween(new Date("02/18/1992"), new Date()));
+// console.log(daysInBetween(new Date("1989-05-24"), new Date('1989-06-24')));
