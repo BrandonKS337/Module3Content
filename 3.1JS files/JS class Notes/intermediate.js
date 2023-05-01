@@ -231,6 +231,20 @@ console.log('step 2', ourStack)*/
 
 // console.log(year, month, day)
 
+// Rays example
+// function displayBDate(){
+//     let myAge=today.getFullYear()-1992;
+//     let myMonths=myAge * 12;
+//     let myDays=myAge * 365;
+
+//     console.log("I am " + myAge + " years, " + myMonths + " months and " + myDays + " days old");
+// }
+
+// displayBDate();
+
+
+
+
 ///Json slide 72
 
 // console.log(title4);
