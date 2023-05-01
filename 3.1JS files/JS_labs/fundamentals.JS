@@ -286,13 +286,14 @@ const printProperties = (param) => {
   }
 };
 
-function Person(name, age) {                        //original problem syntax
+function Person(name, age) {
+  //original problem syntax
   this.name = name;
   this.age = age;
   this.human = true;
 }
 
-let personOne = new Person("Tim", 25);              //showing initial use of constructor function adding 2 new peoples
+let personOne = new Person("Tim", 25); //showing initial use of constructor function adding 2 new peoples
 let personTwo = new Person("Bob", 12);
 printProperties(personOne);
 printProperties(personTwo);
@@ -302,17 +303,24 @@ class PersonClass {
     this.name = name;
     this.age = age;
     this.human = true;
-    this.canDrive = canDrive();
+    this.canDrive2 = this.canDrive();
 
-    function canDrive() {
-      return age >= 15;
-    }
+    // function canDrive() {
+    //   return age >= 15;
+    // }
+  }
+  canDrive() {
+    return this.age >= 15;
   }
 }
 
-let person = new PersonClass("Tina", 12);           // this set of persons is to show .canDrive working in action
+
+
+let person = new PersonClass("Tina", 12); // this set of persons is to show .canDrive working in action
 let person2 = new PersonClass("Bobby", 1);
 let person3 = new PersonClass("Joe", 35);
+
+// console.log(person2.canDrive())
 
 printProperties(person); //calls the arrow function printProperties for person 1
 printProperties(person2);

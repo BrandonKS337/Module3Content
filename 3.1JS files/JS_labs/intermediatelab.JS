@@ -454,12 +454,12 @@ const today = new Date();
 
 function amIOld() {
   // let howOld = today.getFullYear()-1989                  // this part messes up the order and ruins code, ask how else to do this
-  let dateString = '1989-05-24'
-  let bDay = new Date(dateString);
-  let years = today.getFullYear()-bDay.getFullYear()
-  let months = today.getMonth()-bDay.getMonth();
+  let dateString = '1989-05-24'         // defined the date formate
+  let bDay = new Date(dateString);      // added in bday variable set to "todays date" passing through the original year
+  let years = today.getFullYear()-bDay.getFullYear()    // todays date - bday date "year"
+  let months = today.getMonth()-bDay.getMonth();        //todays date - bday moth
 
-  let days = today.getDate()-bDay.getDate();
+  let days = today.getDate()-bDay.getDate();            //todays day - bdays day
   let x = years;
   let y = months;
   let z = days;
