@@ -411,19 +411,18 @@ function mergePhoneBooks(phone1, phone2) {
 //////////////////////// Question 9 ////////////////////////////////
 
 // 9. Given the below salaries object, perform the following tasks.
-let salaries = {
-  Timothy: 35000,
-  David: 25000,
-  Mary: 55000,
-  Christina: 75000,
-  James: 43000,
-};
+// let salaries = {
+//   Timothy: 35000,
+//   David: 25000,
+//   Mary: 55000,
+//   Christina: 75000,
+//   James: 43000,
+// };
 // a) Write a function sumSalaries(salaries) that calculates and returns the total of all salaries
 
 function salTotal(sal) {
   let total = 0; // for of loop.. not for in because this is iterable array.
-  for (let i of Object.values(sal)) {
-    // syntax for for/of loop = for (let x of arr){text +=arr[x]}
+    for (let i of Object.values(sal)) {       // syntax for for/of loop = for (let x of arr){text +=arr[x]}
     total += i; // has to be just i(index) no brackets or will give wrong answers only
   }
   return total; // locks in the total so can read when called
@@ -433,7 +432,33 @@ function salTotal(sal) {
 
 // b) Write a function topEarner(salaries) that calculates and returns the name of the person
 // earning the highest salary
-function topEarner() {}
+
+/////////////////////////// TIME STAMP 5.1.23 7:25pm /////////////////////////////////////
+
+let salaries = {
+  Timothy: 35000,
+  David: 25000,
+  Mary: 55000,
+  Christina: 75000,
+  James: 43000,
+};
+
+function topEarner(salaries) {
+  let topSalary = 0;                               // top Salary now = 35000
+  let topPerson = {}                              //stores keyname:value
+  for (const key in salaries) {
+    if (salaries[key] >= topSalary) {            //this checks true or false for each item inside salaries
+      topSalary = salaries[key];
+      topPerson = {
+        [key]: topSalary
+      }
+    }
+  }
+  return topPerson;             
+}
+console.log(topEarner(salaries))
+
+
 //psuedo:
 // 1. sort values into a seperate array so smallest to biggest value
 // 2. define .length or find last item
@@ -454,19 +479,18 @@ const today = new Date();
 
 function amIOld() {
   // let howOld = today.getFullYear()-1989                  // this part messes up the order and ruins code, ask how else to do this
-  let dateString = '1989-05-24'         // defined the date formate
-  let bDay = new Date(dateString);      // added in bday variable set to "todays date" passing through the original year
-  let years = today.getFullYear()-bDay.getFullYear()    // todays date - bday date "year"
-  let months = today.getMonth()-bDay.getMonth();        //todays date - bday moth
+  let dateString = "1989-05-24"; // defined the date formate
+  let bDay = new Date(dateString); // added in bday variable set to "todays date" passing through the original year
+  let years = today.getFullYear() - bDay.getFullYear(); // todays date - bday date "year"
+  let months = today.getMonth() - bDay.getMonth(); //todays date - bday moth
 
-  let days = today.getDate()-bDay.getDate();            //todays day - bdays day
+  let days = today.getDate() - bDay.getDate(); //todays day - bdays day
   let x = years;
   let y = months;
   let z = days;
   console.log("I am ", +x + " years, ", +y + " months and ", +z + " days old");
 }
 // amIOld()
-
 
 // d) Write a function daysInBetween(date1, date2) which calculates and returns the amount
 // of days in between the two given dates.
