@@ -1,3 +1,5 @@
+///////////////////////////////// Problem 1 ///////////////////////////////////
+
 // 1. makeCounter below is a decorator function which creates and returns a function
 // that increments a counter.
 // a) Create a second counter counter2 using the makeCounter function and test to
@@ -74,9 +76,10 @@ function delayMsg(msg) {
 // 3,2,1 in that order are set to delay out by 0ms 20ms 100ms meaning more and more time set into the delay.
 
 // b) Rewrite delayMsg as an arrow function
-const delayMsg2 = (msg) => {                 //pretty much the same syntax but change "function" to const to "declare it" (ask robert if I phrased this right) 
+const delayMsg2 = (msg) => {
+  //pretty much the same syntax but change "function" to const to "declare it" (ask robert if I phrased this right)
   console.log(`This message will be printed after a delay: ${msg}`);
-}
+};
 
 // setTimeout(delayMsg2, 11000, 'This took 11 seconds')          // super nerve racking waiting 11 seconds for something to just SHOW haha
 // 11,000 number comes from changing 11 seconds to milliseconds aka a 1000 ms/1 sec
@@ -84,18 +87,43 @@ const delayMsg2 = (msg) => {                 //pretty much the same syntax but c
 // d) Use clearTimeout to prevent the fifth test from printing at all.
 
 function delayMsg(msg) {
-  console.log(`This message will be printed after a delay: ${msg}`);    //msg here takes in the msg arguement called by lines below. and returns as part of the string output
+  console.log(`This message will be printed after a delay: ${msg}`); //msg here takes in the msg arguement called by lines below. and returns as part of the string output
 }
 
-let timeoutId = setTimeout(delayMsg, 100, "#1: Delayed by 100ms")
+let timeoutId = setTimeout(delayMsg, 100, "#1: Delayed by 100ms");
 setTimeout(delayMsg, 100, "#1: Delayed by 100ms");
 setTimeout(delayMsg, 20, "#2: Delayed by 20ms");
 setTimeout(delayMsg, 0, "#3: Delayed by 0ms");
 delayMsg("#4: Not delayed at all");
-setTimeout(delayMsg, 11000, 'I am #5 and I took 11 seconds')          // super nerve racking waiting 11 seconds for something to just SHOW haha
+setTimeout(delayMsg, 11000, "I am #5 and I took 11 seconds"); // super nerve racking waiting 11 seconds for something to just SHOW haha
 
 clearTimeout(timeoutId);
 
 //ask robert about this segment I can't get it to skip over the 5th parameter
 
+///////////////////////////////// Problem 3 ///////////////////////////////////
 
+// 3. 'Debouncing' is a concept that refers to 'putting off' the execution of multiple, fast-timed,
+// similar requests until there's a brief pause, then only executing the most recent of those requests.
+// See https://www.techtarget.com/whatis/definition/debouncing
+
+// It's often used to handle fast-firing scrolling events in a browser, or to prevent multiple server
+// requests being initiated if a user clicks repeatedly on a button.
+
+// Using the following code to test and start with:
+// a) Create a debounce(func) decorator, which is a wrapper that takes a function func and suspends calls
+// to func until there's 1000 milliseconds of inactivity. After this 1 second pause, the most recent call
+// to func should be executed and any others ignored.
+// b) Extend the debounce decorator function to take a second argument ms, which defines the length of the
+// period of inactivity instead of hardcoding to 1000ms
+// c) Extend debounce to allow the original debounced function printMe to take an argument msg which is included
+// in the console.log statement.
+function printMe() {
+  console.log("printing debounced message");
+}
+printMe = debounce(printMe); //create this debounce function for a)
+
+//fire off 3 calls to printMe within 300ms - only the LAST one should print, after 1000ms of no calls
+setTimeout(printMe, 100);
+setTimeout(printMe, 200);
+setTimeout(printMe, 300);
