@@ -320,7 +320,6 @@ function multiply(a, b, c, d) {
 // multiply.delay(1000)(2, 3, 4, 6); // delays execution for 1 second and logs 144
 
 ///////////////////////////////// Problem 7 ///////////////////////////////////
-///Need to answer///
 
 // 7. In JavaScript, the toString method is used to convert an object to a string representation.
 // By default, when an object is converted to a String, it returns a string that looks something like [object Object].
@@ -465,7 +464,6 @@ class AlarmClock extends DigitalClock {
 //to test for accuracy I have been setting 2nd param line 460 up for 1 minutes past local time using 24 hour format
 
 ///////////////////////////////// Problem 9 ///////////////////////////////////
-///Need to answer///
 
 // 9. We can delay execution of a function using setTimeout, where we need to provide both the callback function
 // and the delay after which it should execute.
@@ -508,7 +506,6 @@ function randomDelay() {
 // MUST include the call for then and catch or it will run function properly but not log showing the results
 
 ///////////////////////////////// Problem 10 ///////////////////////////////////
-///Need to answer///
 
 // 10. Fetch is a browser-based function to send a request and receive a response from a server, which uses
 // promises to handle the asynchronous response.
